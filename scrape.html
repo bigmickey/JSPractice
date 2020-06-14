@@ -1,0 +1,30 @@
+<html>
+<head>
+</head>
+<body>
+<div id="mydiv">
+</div>
+<script>
+document.getElementById("mydiv").innerHTML="";
+document.write('<input type="text" name="myinput">');
+
+let cheerio = require('cheerio');
+let jsonframe = require('jsonframe-cheerio');
+let request = require('request');
+
+request({
+  method: 'GET',
+  url: 'https://cryptowat.ch/'
+}, (err, res, body) => {
+  if (err) return console.error(err);
+
+let $ = cheerio.load(body);
+
+let title = $('title');
+
+console.log(title.text());
+});
+
+</script>
+</body>
+</html>
