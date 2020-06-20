@@ -7,11 +7,25 @@ request({
 }, (err, res, body) => {
   if (err) return console.error(err);
 
-let $ = cheerio.load(body);
+  let $ = cheerio.load(body);
 
-let title = $('title');
+  let title = $('title');
 
-console.log(title.text());
+  console.log(title.text());
+
+  let allElts = $('*');
+
+  let filteredElts = allElts.filter(function(i, elt) {
+    // this === elt
+    return $(this).children().length > 3; 
+  });
+
+  let items = filteredElts.get();
+
+  items.forEach(e => {
+    console.log(e.name);
+  });
+
 });
 
 const messageModule = require('./messages');
