@@ -30,19 +30,39 @@ request({
 
 // trying to use find to pick out hyperlink with title = Bitcoin
 
-  $('a').each(function(i, element) {
-    if ( $(this).attr('title') == 'Bitcoin' ) {
-      console.log("title is " + $(this).attr('title'));
-      console.log("name is " + $(this).attr('name'));
-      console.log("href is " + $(this).attr('href'));
-      console.log($(this));
-//      console.log($(this).find('span').attr('class'));
-    }
-  });
 
-  $('.price').each(function(i, element) {
-    console.log($(this).text());
-  });
+//  $('a').each(function(i, element) {
+//    if ( $(this).attr('title') == 'Bitcoin' ) {
+//      console.log("title is " + $(this).attr('title'));
+//      console.log("name is " + $(this).attr('name'));
+//      console.log("href is " + $(this).attr('href'));
+//      console.log($(this));
+////      console.log($(this).find('span').attr('class'));
+//    }
+//  });
+
+//  $('.price').each(function(i, element) {
+//    if( $(this).parent().attr(title) == 'Bitcoin' ) {
+//      console.log($(this).text());
+//    }
+//    console.log($(this).parent().parent().attr(title));
+//    console.log($(this));
+//  });
+
+//  const firstPrice = $('.price')[0];
+//  console.log("first price is .. ");
+//  console.log($(firstPrice));
+
+//  console.log("firstPrice's parent is ..");
+//  console.log($(firstPrice).parent());
+
+
+  const bitcoinPriceLink = $("a[title='Bitcoin']");
+  console.log("title is " + $(bitcoinPriceLink).attr('title'));
+
+  console.log("title is" + $("a[title='Bitcoin']").attr('title'));
+
+  console.log("the current bitcoin price is: " + $('.price', $(bitcoinPriceLink)).text());
 
 // this works!!
 //  $('a').each( (index, singleLink) => {
