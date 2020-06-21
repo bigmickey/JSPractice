@@ -36,8 +36,12 @@ request({
       console.log("name is " + $(this).attr('name'));
       console.log("href is " + $(this).attr('href'));
       console.log($(this));
-      console.log($(this).find('span').attr('class'));
+//      console.log($(this).find('span').attr('class'));
     }
+  });
+
+  $('.price').each(function(i, element) {
+    console.log($(this).text());
   });
 
 // this works!!
