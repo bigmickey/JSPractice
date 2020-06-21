@@ -28,6 +28,16 @@ request({
     console.log("href is " + e.attr('href'));
   });
 
+// trying to use find to pick out hyperlink with title = Bitcoin
+
+  $('a').each(function(i, element) {
+    if ( $(this).attr('title') == 'Bitcoin' ) {
+      console.log("title is " + $(this).attr('title'));
+      console.log("name is " + $(this).attr('name'));
+      console.log("href is " + $(this).attr('href'));
+    }
+  });
+
 // this works!!
 //  $('a').each( (index, singleLink) => {
 //    var singleHref = $(singleLink).attr('href');
