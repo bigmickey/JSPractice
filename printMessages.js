@@ -15,18 +15,18 @@ request({
 
   const links = [];
 
-  let allLinks = $('a');
+//  let allLinks = $('a');
 
-  allLinks.each((index, element) => {
-    links.push($(element));
-  });
+//  allLinks.each((index, element) => {
+//    links.push($(element));
+//  });
 
 
-  links.forEach(e => {
-    console.log("title is " + e.attr('title'));
-    console.log("name is " + e.attr('name'));
-    console.log("href is " + e.attr('href'));
-  });
+//  links.forEach(e => {
+//    console.log("title is " + e.attr('title'));
+//    console.log("name is " + e.attr('name'));
+//    console.log("href is " + e.attr('href'));
+//  });
 
 // trying to use find to pick out hyperlink with title = Bitcoin
 
@@ -35,6 +35,8 @@ request({
       console.log("title is " + $(this).attr('title'));
       console.log("name is " + $(this).attr('name'));
       console.log("href is " + $(this).attr('href'));
+      console.log($(this));
+      console.log($(this).find('span').attr('class'));
     }
   });
 
