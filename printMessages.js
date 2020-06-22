@@ -64,6 +64,8 @@ request({
 
   console.log("the current bitcoin price is: " + $('.price', $(bitcoinPriceLink)).text());
 
+  console.log("The current value of 6.15 bitcoins is " + $('.price', $(bitcoinPriceLink)).text() * 6.15);
+
 // this works!!
 //  $('a').each( (index, singleLink) => {
 //    var singleHref = $(singleLink).attr('href');
