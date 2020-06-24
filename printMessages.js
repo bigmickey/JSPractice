@@ -65,7 +65,12 @@ request({
 
   console.log("the current bitcoin price is: " + $('.price', $(bitcoinPriceLink)).text());
 
-  console.log("The current value of 6.15 bitcoins is " + $('.price', $(bitcoinPriceLink)).text() * 6.15);
+//  fs.readFile('assets.txt', 'utf8', function(err,contents) {
+//    console.log(contents);
+//  });
+
+  var numCoins = fs.readFileSync('assets.txt', 'utf8');
+  console.log("The current value of " + numCoins + " bitcoins is " + $('.price', $(bitcoinPriceLink)).text() * numCoins);
 
 // this works!!
 //  $('a').each( (index, singleLink) => {
