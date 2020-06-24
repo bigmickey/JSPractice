@@ -1,5 +1,6 @@
 let request = require('request');
 let cheerio = require('cheerio');
+var fs = require('fs');
 
 request({
   method: 'GET',
